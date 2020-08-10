@@ -16,8 +16,8 @@ body {
 }
 
 body:before {
-    height: 100%;
-    width: 75%;
+    height: 50%;
+    width: 100%;
     position: absolute;
     top: 0;
     left: 0;
@@ -46,7 +46,7 @@ a {
     color: #128ff2;
 }
 
-buttoning {
+button {
     box-shadow: none;
     border: 1px solid transparent;
     font-size: 14px;

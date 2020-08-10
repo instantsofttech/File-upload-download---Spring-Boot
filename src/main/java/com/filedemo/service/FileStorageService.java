@@ -30,7 +30,7 @@ public class FileStorageService {
         try {
             Files.createDirectories(this.fileStorageLocation);
         } catch (Exception ex) {
-            throw new FileStorageException("Could not create the directory where the upload", ex);
+            throw new FileStorageException("Could not create the directory where the uploaded files will be stored.", ex);
         }
     }
 
@@ -50,7 +50,7 @@ public class FileStorageService {
 
             return fileName;
         } catch (IOException ex) {
-            throw new FileStorageException("ERROR " + fileName + "ERROR", ex);
+            throw new FileStorageException("Could not store file " + fileName + ". Please try again!", ex);
         }
     }
 
@@ -61,10 +61,10 @@ public class FileStorageService {
             if(resource.exists()) {
                 return resource;
             } else {
-                throw new MyFileNotFoundException("File doesnt exit " + fileName);
+                throw new MyFileNotFoundException("File not found " + fileName);
             }
         } catch (MalformedURLException ex) {
-            throw new MyFileNotFoundException("File doesnt exit " + fileName, ex);
+            throw new MyFileNotFoundException("File not found " + fileName, ex);
         }
     }
 
