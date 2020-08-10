@@ -49,13 +49,13 @@ public class FileController {
         }
 
         // Fallback to the default content type if type could not be determined
-
-
-
+        if (contentType == null) {
+            contentType = "application/octet-stream";
+        }
     }
 
 
-    @GetMapping("/downloadFile/{fileName}")
+    @GetMapping("/copyFile/{fileName}")
     public String copyFile(@PathVariable String fileName, HttpServletRequest request) {
         return fileStorageService.copyAndLoadFileAsResource(fileName);
     }
